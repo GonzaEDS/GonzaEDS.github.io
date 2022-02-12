@@ -118,7 +118,7 @@ header ul{
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9532855378479517) 24%, rgba(0,212,255,0) 100%);
 }
 .hero-background {
-    background-image: url(/img/hero-banner.webp);
+    background-image: url(../img/hero-banner.webp);
     background-repeat: inherit;
     background-position: right;
 }
