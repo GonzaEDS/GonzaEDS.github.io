@@ -467,6 +467,7 @@ footer p{
         background-image: url(../img/hero-banner.webp);
         background-repeat: inherit;
         background-position: right;
+        background-size: unset;
     }
     
     #start-link {
