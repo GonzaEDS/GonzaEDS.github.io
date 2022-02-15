@@ -128,6 +128,12 @@ h1,h2,h3{
     text-transform: uppercase;
     font-style: italic;
 }
+
+.center {
+    text-align: center;
+}
+
+
 .amaze-title {
     color: white;
     font-size: 300%;
@@ -144,7 +150,7 @@ h1,h2,h3{
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9532855378479517) 24%, rgba(0,212,255,0) 100%);
 }
 .hero-background {
-    background-image: url(img/hero-banner.webp);
+    background-image: url(../img/hero-banner.webp);
     background-size: cover;
     background-repeat: no-repeat;
     min-width: 100%;
@@ -316,6 +322,10 @@ section p{
 }
 
 .single-payment-card button{
+    font-family: 'Lato', sans-serif;
+    color: rgb(238, 235, 235);
+    font-weight: 500;
+    font-size: 16px;
     border: 2px solid #6b6a6adb;
     border-radius: 50px;
     background-color: #555555c2;
@@ -357,7 +367,7 @@ footer p{
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 8fr)0.2fr;
     min-height: 3em;
-    
+
     }
 
     .logo{
@@ -394,6 +404,7 @@ footer p{
         align-items: center;
         margin-right: 1.5em;
     }
+
     nav li {
         margin-left: 2em;
     }
@@ -441,7 +452,7 @@ footer p{
         background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9532855378479517) 24%, rgba(0,212,255,0) 100%);
     }
     .hero-background {
-        background-image: url(img/hero-banner.webp);
+        background-image: url(../img/hero-banner.webp);
         background-repeat: inherit;
         background-position: right;
     }
@@ -497,15 +508,14 @@ footer p{
     }
 
     section p{
-        font-size: 21px;
+        font-size: 1.52em;
         text-align: left;
     }
 
     .text {
         display: block;
-        width: 89%;
         line-height: 1.7;
-        margin: 16px auto 0px;
+        margin: 1.6em auto 0px;
     }
 
     .img-shadow-fx{
@@ -594,6 +604,10 @@ footer p{
     }
 
     .single-payment-card button{
+        font-family: 'Lato', sans-serif;
+        color: rgb(238, 235, 235);
+        font-weight: 500;
+        font-size: 16px;
         border: 2px solid #6b6a6adb;
         border-radius: 50px;
         background-color: #555555c2;
