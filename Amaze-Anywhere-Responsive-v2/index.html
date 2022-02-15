@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaze Anywhere - Fascinating Card Magic</title>
+    <link rel="stylesheet" href="styles.css">
+    <script data-search-pseudo-elements defer src="https://pro.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Amaze Anythere logo" class="logo">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul class="nav__links">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About the course</a>
+                </li>
+                <li>
+                    <a href="faqs.html">FAQs</a>
+                </li>
+                <li>
+                    <a href="testimonials.html">Testimonials</a>
+                </li>
+                <li><button><a href="buy.html" class="enroll-btn">Enroll today</a></button></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    </header>
+    <div class="hero-background">
+        <div class="hero-banner">
+                <h1 class="amaze-title">Amaze anywhere.</h1> 
+                <!-- <a href="#" id="start-link"></a>  -->
+                <button id="start-link"><i aria-hidden="true" class="fas fa-angle-down" style="color:white"></i></button>  
+        </div>
+    </div>
+    <main >
+        <!-- Welcome -->
+        <section class="welcome-section grey-background center">
+
+            <h1 >Welcome</h1>
+            <div class="divider_1"></div>
+
+            <div id="start" class="video" >
+                <!-- <iframe src="https://player.vimeo.com/video/598020474?h=6b0ccb0366&title=0&byline=0&portrait=0" width="1135" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>             -->         
+                <iframe class="iframe" allowfullscreen="" title="Reproductor de vídeo vimeo" src="https://player.vimeo.com/video/598020474?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=0&amp;portrait=0&amp;byline=0#t="></iframe>     
+            </div>
+            <div class="text">
+                <p>With more than 15 years of career, thanks to magic we have traveled the world, performed in TV shows and won multiple international awards.</p>
+                <div class="divisor_2">
+                    <div class="rule"></div>
+                    <div class="eye-background"><i aria-hidden="true" class="far fa-eye" id="eye-icon"></i></div>               
+                </div>
+            </div>
+        </section>
+        <section id="precios">
+
+        </section>
+        <section class="best-routines center bottom-margin">
+            <div>
+                <h1>You will learn our best routines</h1>
+                <div class="divider_1"></div>
+                <img class="img-shadow-fx" src="img/best-routines.jpg" alt="amazed people">
+            </div>
+        </section>   
+        <section class="center single-payment-card">
+            <div class="card">
+                <div class="card-shadow">
+                    <div class="card-title">
+                        <h3>Single payment</h3>
+                    </div>
+                    <div class="card-body"> 
+                        <strike><small>$58</small></strike> $29<small>USD</small> 
+                        <p><i aria-hidden="true" class="far fa-check-circle"></i> <small>Lifetime Access</small></p>
+                        <button>Buy</button>
+                        <p><small>Limited time offer</small></p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section style="display:none" class="background-dark center">
+            <button>More about the course</button>
+
+
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2022 Amaze Anywhere</p>
+    </footer>
+</body>
+<script>
+    /* shrinking navbar when scrolling */
+
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector('header').style.top = "0";
+        } else {
+            document.querySelector('header').style.top = "-55px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
+    /*arrow anchor link smooth scroll*/
+    const startLink = document.querySelector('#start-link')
+    startLink.addEventListener("click", myFunction);
+    function myFunction() {
+      const start = document.getElementById("start");
+      start.scrollIntoView({behavior: "smooth", inline: "nearest"});
+    }
+
+    
+</script>
+</html>
