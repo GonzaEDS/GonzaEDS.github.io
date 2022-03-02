@@ -1,0 +1,1063 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Old+Standard+TT:ital,wght@0,700;1,400&family=Poppins:wght@600&display=swap');
+
+/* vars */
+:root {
+    scroll-behavior: smooth;
+
+    --darkTransparentBg: #060606eb; 
+    --whiteText: rgb(238, 235, 235);
+    --whiteBlueBg: #d4d4de;
+    --primary: #287c81fa;
+    --lighterPrimary: #98c4c7;
+    --navHeight: 8vh;
+    --blackFont:#262729;
+}
+
+/* reset */
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+}
+
+body {
+    font-family: Lato, sans-serif;
+}
+
+header {
+    background-color: var(--darkTransparentBg);
+    font-family: 'Lato',sans-serif;
+    text-align: center;
+    position: fixed;
+    width: 100vw;
+    height: var(--navHeight);
+    z-index: 999;
+    transition: top 0.8s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 2.4em;
+}
+
+/* start nav toggle icon*/
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 50%;
+    right: 6%;
+    color: white;
+    margin: -2px;
+}
+
+.nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after {
+    display: block;
+    background-color: white;
+    height: 2px;
+    width: 1.8em;
+    border-radius: 2px;
+    position: relative; 
+}
+
+.nav-toggle-label span::before, .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    top: 7px;
+}
+
+.nav-toggle-label span::after {
+    bottom: 7px;
+}
+
+/* ends nav toggle icon*/
+
+nav {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 26.5vh;
+    background: #060606f7;
+    transform: scale(1, 0);
+    transition: transform 400ms ease-in-out;
+    transform-origin: top;
+    flex-direction: column;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--whiteText);
+    font-size: 1.2em;
+    opacity: 0;
+    transition: 250ms ease-in-out;   
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+nav button {
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    min-width: fit-content;
+    border: none;
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1);
+}
+
+/* ends nav */
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 50vh);
+    grid-template-areas: "hero" "hero" "welcome" "welcome" "best-routines" "single-payment";
+}
+
+/* HERO BANNER */
+
+.hero-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9532855378479517) 24%, rgba(0,212,255,0) 100%);
+    height: 100vh;
+}
+
+.hero-background {
+    grid-area: hero;
+    background-image: url(../img/hero-banner.webp);
+    background-size: 141vh;
+    background-position: -69vh 0;
+    min-height: 100vh;
+}
+
+.amaze-title {
+    text-transform: uppercase;
+    font-family: 'Old Standard TT',serif;
+    font-style: italic;
+    font-weight: 100;
+    color: white;
+    width: min-content;
+    font-size: 2.5rem;
+    line-height: 5rem;
+}
+
+#start-link {
+    display: flex;
+    width: min-content;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#start-link-to-video {
+    display: none;
+}
+
+.svg-inline--fa {
+    font-size: 1.5em;
+}
+
+.start-btn {
+    font-size: 1.2em;
+    color: var(--whiteText);
+    text-transform: uppercase;
+    border: 2px solid white;
+    padding: 1em;
+    border-radius: 15em;
+}
+
+/* general */
+section h1, section h2, section h3 {
+    color: #161616;
+}
+section h1 {
+    text-align: center;
+    font-family: 'Old Standard TT',serif;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1.4rem;
+}
+
+.flex-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1.5em;
+}
+
+.flex-item-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-item-r {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FOOTER */
+
+footer {
+    color: #7a7a7a;
+    height: 4vh;
+    font-size: 0.8em;
+}
+
+/* WELCOME SECTION */
+
+.welcome-section {
+    grid-area: welcome;
+    /* background-color: var(--whiteBlueBg); */
+    background-image: linear-gradient(80deg, var(--whiteBlueBg) 0%, #d9d9e187 100%);
+}
+
+.welcome-section h1 {
+    font-family: 'Old Standard TT',serif;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1.9rem;
+}
+
+    /* Responsive video */
+.video {
+    position: relative;
+    overflow: hidden;
+    /* width: 93%;
+    padding-top: 51.5%; */
+    width: 100%;
+    padding-top: 55.5%;
+    margin: 0 auto;
+}
+
+.iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;  
+}
+    /* ends rv */
+
+.divider_1 {
+    border-bottom: 2px solid var(--primary);
+    width: 3.7em;
+    margin-top: -1em;
+}
+
+.text {
+    justify-content: space-around;
+}
+
+.welcome-section p {
+    width: 80%;
+    text-align: justify;
+    font-size: 1.3em;
+    line-height: 1.7em;
+}
+
+    /* eye divider */
+.rule {
+    border-bottom: 2px solid var(--primary);
+    width: 36%;
+}
+
+.eye-divider {
+    display: flex;
+    gap: 0.3em;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+}
+
+.fa-eye {
+    color: var(--primary);
+    font-size: 1.2em;
+}
+
+.eye-background {
+    position: absolute;
+    top: -11px;
+    left: 45%;
+    background-color: #dbdada;
+    width: 38px;
+}
+    /* ends eye divisor  */
+
+    /* next button */
+.next {
+    all: unset;
+    display: flex;
+    align-items: baseline;
+    gap: 0.3em;
+    align-self: end;
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    padding: 0.2em 0.5rem;
+    text-transform: uppercase;
+    background-color: #287c8121;
+    transform: translate(-1em, 0em);
+}
+.next a {
+    color: var(--primary);
+    text-decoration: none;
+
+}
+
+.next .fa-angle-down {
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+    /* ends next btn */
+
+
+/* BEST-ROUTINES */
+
+.best-routines-section {
+    grid-area: best-routines;
+}
+
+.best-routines-section img {
+    box-shadow: 0px 1px 5px 0px black;
+    width: 90%;
+}
+
+/* SINGLE-PAYMENT */
+.single-payment-section {
+    background-image: url(../img/girl-amazed1.webp);
+    background-size: 135%;
+    background-position: -250%;
+    grid-area: single-payment;
+}
+
+.sp-card-bg {
+    position: relative;
+    background: linear-gradient(294deg, rgb(55 115 117) 0%, rgb(51 113 114) 46%, rgb(49 100 102) 100%);
+    background: linear-gradient(294deg, rgb(55 115 117 / 79%) 0%, rgb(51 113 114 / 79%) 46%, rgb(49 100 102 / 68%) 100%);
+    background: linear-gradient(294deg, rgb(55 115 117 / 88%) 0%, rgb(51 113 114 / 88%) 46%, rgb(49 100 102 / 82%) 100%);
+    width: 100%;
+    height: 100%;
+}
+
+    /* offer band */
+.offer-band-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 6em;
+    width: 7rem;
+    overflow: hidden;
+}
+
+.offer-band {
+    color: rgb(238 235 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: emoji;
+    font-weight: 100;
+    font-size: 1.4em;
+    width: 6em;
+    background-color: black;
+    background-image: linear-gradient(359deg, black 23%, #b3b3b354 55%, #ff040400), linear-gradient(180deg, black 100%, #6c5d5d9c 100%, #ff000000);
+    transform: rotate(45deg) translate(16%, 20%);
+}
+    /* ends ob */
+
+.sp-card {
+    background-color: #555555;
+    width: 92%;
+    height: 80%;
+    justify-content: flex-start;
+}
+
+.sp-card h1 {
+    color: var(--whiteText);
+}
+
+.sp-card-head {
+    width: 100%;
+    height: 30%;
+}
+
+.sp-card-body {
+    background-color: #eeebeb;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    font-family: 'Lato';
+    font-weight: 800;
+    color: #555555;
+
+}
+
+.sp-card-body button {
+    font-family: 'Lato', sans-serif;
+    color: rgb(238, 235, 235);
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 2px solid #6b6a6adb;
+    border-radius: 50px;
+    background-color: #555555c2;
+    min-width: 4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.8s;
+}
+
+.price {
+    font-size: 1.5rem;
+    gap: 0.2em;
+}
+
+.price small{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.fa-check-circle {
+    font-size: 1rem;
+}
+
+/* pages... */
+/* ... */
+
+
+/* MEDIA QUERIES */
+
+/* referencia galaxys8 */
+@media screen and (min-width:360px) {
+
+    .flex-section {
+        row-gap: 1.8em;
+    }
+
+    nav ul, .nav-toggle-label, .text, .sp-card-body, .sp-card-body p{
+        font-size: 110%;
+    }
+
+    section h1 {
+        font-size: 1.73rem;
+    }
+
+    .amaze-title {
+        font-size: 3.2rem;
+    }
+
+    #start-link {
+        font-size: 104%;
+    }
+
+    footer {
+        height: 5vh;
+    }
+
+    /* WELCOME */
+
+    .welcome-section h1 {
+        font-size: 2.1rem;
+    }
+
+    .next {
+        transform: translate(-2em, 0.2em);
+    }
+
+    /* SINGLE PAYMENT  */
+    .price {
+        font-size: 2.5rem;
+    }
+
+    .sp-card-body button {
+        font-size: 1.1rem;
+        min-width: 4.1rem;
+    }
+   
+}
+
+    /* (referencia iPhone 12 Pro) */
+@media screen and (min-width:390px) {
+
+    .flex-section {
+        row-gap: 2em;
+    }
+
+    nav ul, .nav-toggle-label, .text, .sp-card-body, .sp-card-body p{
+        font-size: 120%;
+    }
+
+    section h1 {
+        font-size: 1.93rem;
+    }
+
+    nav button {
+        font-size: 1rem;
+    }
+
+    .amaze-title {
+        font-size: 3.5rem;
+        top: 18vh;
+        line-height: 5.5rem;
+    }
+
+    /* WELCOME */
+    .welcome-section h1 {
+        font-size: 2.4rem;
+    }
+
+    .divider_1 {
+        margin-top: -1.4em;
+    }
+
+    .welcome-section p {
+        font-size: 1.4em;
+        line-height: 1.8em;
+    }
+
+}
+
+/* referencia iPad mini (reducido para ajustarse al galaxy tab s4) */
+@media screen and (min-width:712px) {
+
+    /* grid */
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(30, 10vh);
+    }
+
+    .hero-background {
+        grid-row: 1/11;
+    }
+
+    .welcome-section {
+        grid-row: 11/21;
+    }
+
+    .best-routines-section {
+        grid-row: 21/27
+    }
+
+    .single-payment-section {
+        grid-row: 27/31;
+    }
+    /* grid */
+
+
+    header a {
+        font-size: 1.2rem;
+    }
+
+    nav ul, .nav-toggle-label, .text, .sp-card-body, .sp-card-body p{
+        font-size: 150%;
+    }
+
+    nav li a {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+
+    nav button {
+        font-size: 1.4rem;
+    }
+
+    .hero-background {
+        background-position: -74vw 0vh;
+    }
+
+    .amaze-title {
+        font-size: 6.5rem;
+        top: 19vh;
+        line-height: 9.5rem;
+    }
+
+    #start-link .fa-angle-down, #start-link .start-btn {
+        transform: scale(1.1);
+    }
+
+    section h1 {
+        font-size: 2.93rem;
+    }
+
+    .divider_1 {
+        border-bottom: 3px solid var(--primary);
+        width: 7rem;
+    }
+
+    /* footer */
+    footer { 
+        font-size: 1.5em;
+    }
+
+    /* WELCOME */
+   
+    .welcome-section h1 {
+        font-size: 3.4rem;
+    }
+
+    .next {
+        transform: translate(-4em, 0.2em) scale(1.3);
+    }
+
+    /* BEST ROUTINES */
+
+    .best-routines-section img {
+        width: 85%;
+    }
+
+    /* SINGLE PAYMENT */
+
+    .offer-band-box {
+        height: 10em;
+        width: 10rem;
+    }
+    .offer-band {
+        transform: rotate(45deg) translate(41%, 20%) scale(1.5);
+    }
+
+    .price {
+        font-size: 3.3rem;
+    }
+
+    .price small {
+        font-size: 2rem;
+    }
+
+    .fa-check-circle {
+        font-size: 1.5rem;
+    }
+
+    .sp-card-body p {
+        font-size: 2.1rem;
+    }
+
+    .sp-card-body button {
+        font-size: 1.5rem;
+        min-width: 4.9rem;
+        padding: 2px 0px;
+    }
+
+}
+
+/* referencia iPad air */
+@media screen and (min-width:820px) {
+
+    nav ul {
+        gap: 0.9em;
+    }
+
+    nav li a {
+        font-size: 1.8rem;
+    }
+
+    .amaze-title {
+        font-size: 7rem;
+    }
+
+    #start-link {
+        gap: 1.4em;
+    }
+
+    #start-link .fa-angle-down, #start-link .start-btn {
+        transform: scale(1.2);
+    }
+
+    .flex-section {
+        row-gap: 2.5em;
+    }
+
+    /* WELCOME */
+
+    .welcome-section h1 {
+        font-size: 3.8rem;
+    }
+
+    .welcome-section p {
+        font-size: 1.5em;
+        line-height: 1.9em;
+    }
+
+    .next {
+        transform: translate(-5em, 0.2em) scale(1.5);
+    }
+
+    /* SINGLE PAYMENT */
+
+    .offer-band-box {
+        height: 40%;
+        width: 24%;
+    }
+
+    .offer-band {
+        transform: rotate(45deg) translate(60%, 0%) scale(1.9);
+    }
+
+    .sp-card-body button {
+        font-size: 1.7rem;
+        min-width: 5.5rem;
+    }
+
+}
+
+/* iPad mini horizontal */
+@media screen and (min-width:1024px) {
+
+    /* Navbar */
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+
+    header  a {
+        display: flex;
+        align-items: center;
+    }
+
+    nav {
+        all: unset;
+        display: flex;
+        align-items: center;
+        width: 60%;
+    }
+
+    nav a {
+        font-size: 16px;
+        opacity: 1;
+        transition: all 0.3s ease 0s;    
+    }
+
+    nav a:hover {
+        color: var(--lighterPrimary);
+    }
+
+    nav .enroll-btn:hover {
+        color:unset;
+    }
+
+    nav ul {
+        all: unset;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    nav li {
+        list-style: none;
+    }
+
+    nav li a {
+        font-size: 1.2rem;
+    }
+
+    nav button {
+        all: unset; 
+        min-width: fit-cntent;
+        flex-wrap: nowrap;
+    }
+
+    nav li .enroll-btn {
+        margin: unset;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: small;
+        border-radius: 50px;
+        padding: 7px 20px;
+        border: 2px solid var(--lighterPrimary);
+        transition: background-color 0.5s, color 0.5s;
+        white-space: nowrap;
+    }
+
+    nav li .enroll-btn:hover {
+        background-color: var(--lighterPrimary);
+        color: #0c0c0c;
+        font-weight: 700;
+    }
+    /* ends navbar */
+
+     /* main grid */
+     .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(42, 10vh);
+    }
+
+    .hero-background {
+        grid-row: 1/11;
+    }
+
+    .welcome-section {
+        grid-row: 11/26;
+    }
+
+    .best-routines-section {
+        grid-row: 26/36
+    }
+
+    .single-payment-section {
+        grid-row: 36/43;
+    }
+    /* grid */
+
+
+    /* general */
+    .flex-section {
+        row-gap: 2em;
+    }
+
+    section h1 {
+        font-size: 3.4rem;
+    }
+
+    /* HERO BANNER */
+    .hero-background {
+        background-position: -104vw 8vh;
+    }
+    .hero-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+    .amaze-title {
+        position: unset;
+        font-size: 7rem;
+        width: min-content;   
+    }
+
+    #start-link {
+        position: unset;
+        width: min-content;
+    }
+
+
+    /* SINGLE PAYMENT */
+
+    .offer-band-box {
+        height: 40%;
+        width: 22%;
+    }
+
+    .offer-band {
+        width: 6.1em;
+        transform: rotate(45deg) translate(75%, 0) scale(2.1);
+    }
+
+}
+
+/* pantallas */
+@media screen and (min-width:1200px) {
+
+    /* grid */
+    .grid {
+        grid-template-rows: repeat(51, 10vh);
+    }
+    .welcome-section {
+        grid-row: 11/28;
+    }
+    .best-routines-section {
+        grid-row: 28/42
+    }
+    .single-payment-section {
+        grid-row: 42/52;
+    }
+    /* grid */
+    
+    header {
+        padding: 0 3rem 0 2rem;
+    }
+
+    header a {
+        font-size: 1rem;
+    }
+
+    nav {
+        width: 47%;
+    }
+
+    nav li a {
+        font-size: 1.1rem;
+    }
+
+    .hero-background {
+        background-position: right center;
+        background-size: unset;
+    }
+    .hero-banner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 8rem;
+    }
+    #start-link {
+        font-size: 80%;
+    }
+
+    #start-link .start-btn {
+        transform: initial;
+    }
+
+    /* general */
+
+    nav ul, .nav-toggle-label, .text, .sp-card-body {
+        font-size: unset;
+    }
+
+    .flex-section {
+        justify-content: center;
+        row-gap: 2.2em;
+    }
+
+    #start-link {
+        display: none;
+    }
+
+    #start-link-to-video {
+        display: flex;
+        width: min-content;
+        justify-content: center;
+        gap: 1em;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* WELCOME */
+
+    .welcome-section h1 {
+        font-size: 3.2rem;
+    }
+
+    .divider_1 {
+        width: 5rem;
+    }
+
+    .video {
+        /* width: 77%;
+        padding-top: 43.5%; */
+        width: 93%;
+        padding-top: 51.5%;
+        /* margin-top: -3px; */
+    }
+
+    .welcome-section .text {
+        row-gap: 3.5em
+    }
+    .text p {
+        font-size: 1.7em;
+        line-height: 1.8em;
+        width: 86%;
+    }
+
+    .eye-divider {
+        display: flex;
+        gap: 2em;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+
+    .rule {
+        border-bottom: 2px solid var(--primary);
+        width: 41%;
+    }
+
+    .next {
+        display: none;
+    }
+
+    /* BEST ROUTINES */
+
+    .best-routines-section img {
+        margin-top: 0.5em;
+        box-shadow: 1px 1px 11px 0px black;
+        width: 82%;
+    }
+
+    .best-routines-section h1 {
+        font-size: 3.2rem;
+        line-height: 1.3;
+        width: 65%;
+    }
+
+    /* SINGLE PAYMENT */
+
+
+    .offer-band-box {
+        height: 40%;
+        width: 20%;
+    }
+
+    .offer-band{
+       transform: rotate(45deg) translate(88%, 0%) scale(2.5); 
+    }
+
+    .sp-card {
+        width: 88%;
+    }
+
+    .price {
+        font-size: 5rem;
+    }
+
+    .price small {
+        font-size: 3rem;
+    }
+    
+
+    
+
+}
+    
+    
+
