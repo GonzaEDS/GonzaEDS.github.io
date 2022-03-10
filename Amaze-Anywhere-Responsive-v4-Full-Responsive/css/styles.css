@@ -1,0 +1,2623 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Old+Standard+TT:ital,wght@0,700;1,400&family=Poppins:wght@600&display=swap');
+
+/* vars */
+:root {
+    scroll-behavior: smooth;
+
+    --darkTransparentBg: #060606eb; 
+    --whiteText: rgb(238, 235, 235);
+    --whiteBlueBg: #d4d4de;
+    --primary: #287c81fa;
+    --lighterPrimary: #98c4c7;
+    --navHeight: 8vh;
+    --blackFont:#262729;
+    --titlesFont: 'Old Standard TT',serif;
+    --sansSerifFont: 'Lato', sans-serif;
+}
+
+/* reset */
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+}
+
+body {
+    font-family: var(--sansSerifFont);
+}
+
+header {
+    background-color: var(--darkTransparentBg);
+    font-family: 'Lato',sans-serif;
+    text-align: center;
+    position: fixed;
+    width: 100vw;
+    height: var(--navHeight);
+    z-index: 999;
+    transition: top 0.8s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 2.4em;
+}
+
+/* start nav toggle icon*/
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 50%;
+    right: 6%;
+    color: white;
+    margin: -2px;
+}
+
+.nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after {
+    display: block;
+    background-color: white;
+    height: 2px;
+    width: 1.8em;
+    border-radius: 2px;
+    position: relative; 
+}
+
+.nav-toggle-label span::before, .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    top: 7px;
+}
+
+.nav-toggle-label span::after {
+    bottom: 7px;
+}
+
+/* ends nav toggle icon*/
+
+nav {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 26.5vh;
+    background: #060606f7;
+    transform: scale(1, 0);
+    transition: transform 400ms ease-in-out;
+    transform-origin: top;
+    flex-direction: column;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--whiteText);
+    font-size: 1.2em;
+    opacity: 0;
+    transition: 250ms ease-in-out;   
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+nav button {
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    min-width: fit-content;
+    border: none;
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1);
+}
+
+/* ends nav */
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 50vh);
+    grid-template-areas: "hero" "hero" "welcome" "welcome" "best-routines" "single-payment";
+}
+
+/* HERO BANNER */
+
+.hero-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9532855378479517) 24%, rgba(0,212,255,0) 100%);
+    height: 100vh;
+}
+
+.hero-background {
+    grid-area: hero;
+    background-image: url(../img/hero-banner.webp);
+    background-size: 141vh;
+    background-position: -69vh 0;
+    min-height: 100vh;
+}
+
+.amaze-title {
+    text-transform: uppercase;
+    font-family: 'Old Standard TT',serif;
+    font-style: italic;
+    font-weight: 100;
+    color: white;
+    width: min-content;
+    font-size: 2.3rem;
+    line-height: 4.5rem;
+}
+
+#start-link {
+    display: flex;
+    width: min-content;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#start-link-to-video {
+    display: none;
+}
+
+.svg-inline--fa {
+    font-size: 1.5em;
+}
+
+.start-btn {
+    font-size: 1.2em;
+    color: var(--whiteText);
+    text-transform: uppercase;
+    border: 1.5px solid white;
+    padding: 1em;
+    border-radius: 15em;
+}
+
+/* general */
+section h1, section h2, section h3 {
+    color: #161616;
+}
+
+section h1 {
+    text-align: center;
+    font-family: 'Old Standard TT',serif;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1.4rem;
+}
+
+.flex-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1.5em;
+}
+
+.flex-item-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-item-r {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FOOTER */
+
+footer {
+    color: #7a7a7a;
+    height: 4vh;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+}
+
+/* WELCOME SECTION */
+
+.welcome-section {
+    grid-area: welcome;
+    /* background-color: var(--whiteBlueBg); */
+    background-image: linear-gradient(80deg, var(--whiteBlueBg) 0%, #d9d9e187 100%);
+}
+
+.welcome-section h1 {
+    font-family: 'Old Standard TT',serif;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1.9rem;
+}
+
+    /* Responsive video */
+.video {
+    position: relative;
+    overflow: hidden;
+    /* width: 93%;
+    padding-top: 51.5%; */
+    width: 100%;
+    padding-top: 55.5%;
+    margin: 0 auto;
+}
+
+.iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;  
+}
+    /* ends rv */
+
+.divider_1 {
+    border-bottom: 2px solid var(--primary);
+    width: 3.7em;
+    margin-top: -1em;
+}
+
+.text {
+    justify-content: space-around;
+}
+
+.welcome-section p {
+    width: 80%;
+    text-align: justify;
+    font-size: 1.3em;
+    line-height: 1.7em;
+}
+
+    /* eye divider */
+.rule {
+    border-bottom: 2px solid var(--primary);
+    width: 36%;
+}
+
+.eye-divider {
+    display: flex;
+    gap: 0.3em;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+}
+
+.fa-eye {
+    color: var(--primary);
+    font-size: 1.2em;
+}
+
+.eye-background {
+    position: absolute;
+    top: -11px;
+    left: 45%;
+    background-color: #dbdada;
+    width: 38px;
+}
+    /* ends eye divisor  */
+
+    /* next button */
+.next {
+    all: unset;
+    display: flex;
+    align-items: baseline;
+    gap: 0.3em;
+    align-self: end;
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    padding: 0.2em 0.5rem;
+    text-transform: uppercase;
+    background-color: #287c8121;
+    transform: translate(-1em, 0em);
+}
+
+.next a {
+    color: var(--primary);
+    text-decoration: none;
+
+}
+
+.next .fa-angle-down {
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+    /* ends next btn */
+
+
+/* BEST-ROUTINES */
+
+.best-routines-section {
+    grid-area: best-routines;
+}
+
+.best-routines-section img {
+    box-shadow: 0px 1px 5px 0px black;
+    width: 90%;
+}
+
+/* SINGLE-PAYMENT */
+.single-payment-section {
+    background-image: url(../img/girl-amazed1.webp);
+    background-size: 135%;
+    background-position: -250%;
+    grid-area: single-payment;
+}
+
+.sp-card-bg {
+    position: relative;
+    background: linear-gradient(294deg, rgb(55 115 117) 0%, rgb(51 113 114) 46%, rgb(49 100 102) 100%);
+    background: linear-gradient(294deg, rgb(55 115 117 / 79%) 0%, rgb(51 113 114 / 79%) 46%, rgb(49 100 102 / 68%) 100%);
+    background: linear-gradient(294deg, rgb(55 115 117 / 88%) 0%, rgb(51 113 114 / 88%) 46%, rgb(49 100 102 / 82%) 100%);
+    width: 100%;
+    height: 100%;
+}
+
+    /* offer band */
+.offer-band-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 6em;
+    width: 7rem;
+    overflow: hidden;
+}
+
+.offer-band {
+    color: rgb(238 235 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 1.4em;
+    width: 6em;
+    background-color: black;
+    background-image: linear-gradient(359deg, black 23%, #b3b3b354 55%, #ff040400), linear-gradient(180deg, black 100%, #6c5d5d9c 100%, #ff000000);
+    transform: rotate(45deg) translate(16%, 20%);
+}
+    /* ends ob */
+
+.sp-card {
+    background-color: #555555;
+    width: 92%;
+    height: 80%;
+    justify-content: flex-start;
+}
+
+.sp-card h1 {
+    color: var(--whiteText);
+}
+
+.sp-card-head {
+    width: 100%;
+    height: 30%;
+}
+
+.sp-card-body {
+    background-color: #eeebeb;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    font-family: var(--sansSerifFont);
+    font-weight: 800;
+    color: #555555;
+
+}
+
+.sp-card-body button {
+    font-family: var(--sansSerifFont);
+    color: rgb(238, 235, 235);
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 2px solid #6b6a6adb;
+    border-radius: 50px;
+    background-color: #555555c2;
+    min-width: 4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.8s;
+}
+
+.sp-card-body button a {
+    all: inherit;
+}
+
+.price {
+    font-size: 1.5rem;
+    gap: 0.2em;
+}
+
+.price small{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.fa-check-circle {
+    font-size: 1rem;
+}
+
+/* pages... */
+
+.header-titles {
+    font-family: var(--titlesFont);
+    font-weight: 100;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    text-transform: uppercase;
+    padding-top: 4em;
+    padding-bottom: 2em;
+    /* padding-left: 3.4em; */
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 100vh) 55vh 114vh;
+    grid-template-areas:
+        "banner"
+        "quick-info"
+        "about"
+        "goals";
+}
+
+
+.about-bg-img {
+    background-image: url(../img/cards-background.webp);
+    background-size: 205%;
+    background-color: #fffffff0;
+    background-blend-mode: lighten;
+}
+
+/* banner */
+.pages-background { 
+    grid-area: banner;
+    /* background-repeat: repeat-x;
+    min-width: 100%;
+    background-position: 15em -2em;
+    background-image: url(../img/ribbon-spread-1-1024x576.webp); */
+    background-image: url(../img/fondo-prueba1.png);
+    background-size: 1041%;
+    background-position: 76% 100%;
+    filter: drop-shadow(1px 3px 1px black);   
+}
+
+.about-banner {
+    position: relative;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(0 0 0) 23%, rgb(0 0 0 / 82%) 44%, rgb(19 0 32 / 28%) 100%);
+}
+
+.about-start-btn {
+    font-size: 1.1em;
+    color: var(--whiteText);
+    text-transform: uppercase;
+    border: 1px solid white;
+    padding: 1em;
+    border-radius: 4em;
+    width: 10em;
+}
+
+#about-start a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+  
+} 
+
+#about-start .fa-angle-down {
+    color: white;
+}
+
+#about-start {
+    display: flex;
+    width: min-content;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* quick info */
+
+.quick-info {
+    grid-area: quick-info;
+    background: linear-gradient(45deg, #31758f, #23434fc7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.8rem;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 1em;
+}
+
+.info-card img {
+    place-self: center;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0px 0px 3px 2px #2a5a6c;
+}
+.info-card h3 {
+    color: var(--whiteText);
+    font-family: var(--sansSerifFont);
+    font-style: initial;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.info-card p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: #d5e7ec;
+    text-align: justify;
+}
+
+/* about video section */
+
+.about-video {
+    background-image: linear-gradient(80deg, #d4d4deb8 0%, #d9d9e15c 100%);
+    grid-area: about;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2em;
+    padding: 2em 0;
+    align-items: center;
+}
+
+/* course goals section*/
+
+.course-goals {
+    grid-area: goals;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1.5em;
+    align-items: center;
+    background-size: cover;
+    /* box-shadow: 2px 0px 2px 0px black; */
+}
+
+.course-goals h1 {
+    font-size: 1.7rem;
+}
+
+.goals-cards-container {
+    display: flex;
+    flex-direction: column;
+    filter: drop-shadow(0px 0px 1px #59636a);
+    /* box-shadow: 2px 0px 2px 0px black; */
+    
+}
+
+.goals-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 33vh;
+    /* background-color: #ffffffde; */
+    /* background-color: #f4f4f4; */
+    background-color: #f5f7f8;
+}
+
+.goals-card-fx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ffffff00 60%, #0000002b);
+} 
+
+.goals-img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.goals-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;   
+    width: 100%;
+    height: 100%;
+}
+
+.goals-img-fx {
+    /* background: linear-gradient(180deg, rgba(252, 252, 252, 0), #f5f5f5); */
+    background: linear-gradient(180deg, rgba(252, 252, 252, 0), #f6f8f9);
+    position: absolute;
+    top: 1px;
+    left: 0;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.goals-img-1 {
+    background-image: url(../img/Alan-400x220.webp);
+   
+}
+
+.goals-img-2 {
+    background-image: url(../img/Guadi-400x220-2.png);
+}
+
+.goals-img-3 {
+    background-image: url(../img/foro-crop-3.png);    
+}
+
+.goals-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    padding: 0.3em 0.3em;
+}
+
+.goals-text h3 {
+    font-family: var(--titlesFont);
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.goals-text p { 
+    font-size: 1rem;
+    line-height: 1.3;
+    color: #686868;
+    margin-bottom: 0.5em;
+}
+
+/* FAQS PAGE */
+
+
+.faqs-page .header-titles {
+    padding-top: 0em;
+    padding-bottom: 3em;
+    line-height: 1.5;
+}
+
+.faqs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh 124vh 70vh;
+    grid-template-areas: "banner" "faqs" "guarantee";
+}
+
+/* faqs section */
+
+.faqs {
+    grid-area: faqs;
+    border-top: 2em solid #2a023447;
+    background: linear-gradient(45deg, #31758f, #23434fc7), linear-gradient(45deg, #256c8747, #2e5f7042);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+
+/* question divider */
+.question-divider {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 87%;
+    align-self: center;
+}
+.faqs .fa-question-circle {
+    color: #cadeef;
+}
+.faqs .rule {
+    border-bottom: 2px solid rgb(142 175 203);
+    width: 50%;
+}
+/* ends question divider */
+
+.faqs-divider {
+    width: 85%;
+    border-bottom: 2px solid rgb(142 175 203);
+}
+
+
+.fa-ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.fa-ul>li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.faqs .fa-chevron-up {
+    color: white;
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+.faqs h2 {
+    font-family: var(--sansSerifFont);
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 500;
+    width: 90%;
+}
+
+.faqs p {
+    color: #ffffffe6;
+    line-height: 1.5;
+    align-self: center;
+    transform: translate(-1.3em, 0);
+    text-align: justify;
+    width: 91%;
+}
+
+/* guarantee section */
+
+
+
+.guarantee {
+    grid-area: guarantee;
+    display: flex;
+    flex-direction: column;
+    background: url(../img/cardsbackground2.png);
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cardsbackground {
+    
+    filter: drop-shadow(2px 4px 6px black);
+    background: linear-gradient(90deg, #bfa5008c, #bfa5008c);
+    background: linear-gradient(90deg, #efd94e8a, #ffe4388c);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.guarantee-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    width: 90%;
+    height: 90%;
+ 
+    background: linear-gradient(90deg, rgb(0 0 0 / 82%), rgb(0 0 0 / 66%));
+    color: rgb(142 175 203);
+    color: rgb(150 182 209);
+    gap: 1em;
+    padding: 0 1em;
+}
+
+.guarantee-card h2 {
+    font-style: initial;
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgb(142 175 203);
+    color: rgb(150 182 209);
+    font-family: var(--titlesFont);
+    text-transform: uppercase;
+}
+
+.guarantee-card p{
+    font-size: 1.15rem;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.guarantee-card img {
+    width: 80%;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+/* TESTIMONIALS PAGE */
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh auto auto;
+    grid-template-areas: "banner" "quote" "reviews";
+}
+
+.testimonials-bg {
+    background-image: url(../img/alan-amazed.webp);
+    background-position-y: 93%;
+}
+
+
+/* quote section */
+.quote {
+    grid-area: quote;
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    gap: 1em;
+}
+
+.quote h3 {
+    color: #3d7186;
+    font-style: normal;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+.divider_3 {
+    border-bottom: 2px solid rgb(62 113 134);
+    width: 6em;
+    display: flex;
+}
+
+.quote h1 {
+    all: unset;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.quotedivider {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: -0.7em; */
+    gap: 1em;
+}
+
+.quotedivider .rule {
+    width: 30%;
+}
+
+.fa-quote-left {
+    /* padding: 1rem; */
+    font-size: 1rem;
+    color: #355f70;
+}
+
+/* reviews section */
+
+.reviews {
+    gap: 2em;
+    background: linear-gradient(45deg, #31758f, #23434fc7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+}
+
+.facebook-reviews-img {
+    width: 95%;
+    border-radius: 5px;
+    filter: drop-shadow(0px 0px 2px #203c46);
+    display: none;
+}
+.facebook-reviews-img-mobile {
+    width: 95%;
+}
+
+.reviews h1 {
+    color: #fffffffa;
+    font-style: italic;
+    font-size: 1.7rem;
+}
+
+/* BUY PAGE */
+
+.buy-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh auto auto;
+    grid-template-areas: "banner" "summary" "buy-forms";
+}
+
+.buy {
+    background-color: #f5f6f7;
+}
+
+.summary-card-section {
+    padding-top: 2em;
+    grid-area: summary;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.summary-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: 90%;
+    padding: 1em;
+    background-color: #fffffffd;
+    filter: drop-shadow(0px 1px 1px black);
+}
+
+.summary-card img {
+    width: 100%;
+}
+
+.summary-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.summary-text h3 {
+    font-family: 'lato', sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #2f2f2f;
+    font-weight: 500;
+}
+
+
+.summary-text p {
+    line-height: 2;
+    font-size: 1rem;
+}
+
+.buy-forms-section {
+    grid-area: buy-forms;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    padding: 2em 0.4em;
+}
+
+.buy-forms-section h2 {
+    font-size: 1rem;
+    font-family: 'Lato';
+    font-style: normal;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    font-weight: 500;
+}
+
+.buy-forms-section fieldset {
+    border: 2px solid black;
+    position: relative;
+    background-color: #fffffffd;
+    border-radius: 1em;
+    box-shadow: -1px 1px 1px black;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+    padding: 1em;
+}
+
+.buy-forms-section legend {
+    position: absolute;
+} 
+
+.account-form legend {
+    top: -3em;
+}
+
+.credit-card-form legend {
+    top: -2em;
+}
+
+.credit-card-form fieldset {
+    margin-top: -1em;
+}
+
+legend  h4 {
+    font-size: 0.9rem;
+}
+
+.buy .forms form {
+    padding: 2em;
+}
+
+.buy-forms-section button {
+    width: 84px;
+    height: 2.5em;
+    color: #fffffffd;
+    background-color: black;
+    font-weight: 600;
+    padding: 0.5em;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    margin-left: 2em;       
+}
+
+.buy-forms-section button:hover {
+    background-color: rgba(0, 0, 0, 0.829);
+}
+
+.buy-forms-section input {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-family: helvetica;
+    outline: none;
+    padding: 0 15px;
+    color: rgba(0, 0, 0, 0.877);
+    height: 2em;
+    width: auto;
+}
+
+.buy-forms-section input[type="checkbox"] {
+    height: unset;
+    margin: 0;
+}
+
+fieldset label {
+    font-size: 0.9rem;
+}
+
+
+
+
+/* ... */
+
+
+/* MEDIA QUERIES */
+
+/* referencia galaxys8 */
+@media screen and (min-width:360px) {
+
+    .flex-section {
+        row-gap: 1.8em;
+    }
+
+    nav ul, .nav-toggle-label, .text, .sp-card-body, .sp-card-body p{
+        font-size: 110%;
+    }
+
+    section h1 {
+        font-size: 1.73rem;
+    }
+
+    .hero-background .hero-banner {
+        padding-top: 4em;
+    }
+
+    .amaze-title {
+        font-size: 3rem;
+        line-height: 5rem;
+    }
+
+    #start-link {
+        font-size: 104%;
+    }
+
+    footer {
+        height: 5vh;
+    }
+
+    /* welcome section */
+    .welcome-section h1 {
+        font-size: 2.1rem;
+    }
+
+    .next {
+        transform: translate(-2em, 0.2em);
+    }
+
+    /* single payment section  */
+    .price {
+        font-size: 2.5rem;
+    }
+
+    .sp-card-body button {
+        font-size: 1.1rem;
+        min-width: 4.1rem;
+    }
+
+    
+
+    /* ABOUT PAGE */
+
+    .header-titles {
+        font-size: 2.1em;  
+    }
+
+    .about-start-btn {
+        font-size: 1.3em;
+    }
+
+    /* quick info section */
+    .quick-info {
+        gap: 1.6em;
+    }
+
+    .info-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .info-card p {
+        font-size: 1.3em;
+    }
+
+    /* about video */
+    .about-video h1 {
+        font-size: 1.85rem;
+    }
+
+    /* course-goals */
+    .course-goals h1 {
+        font-size: 1.85rem;
+    }
+
+    .goals-text p {
+        font-size: 1.2rem;
+        color: #686868db;
+    }
+
+    .goals-text h3 {
+        font-size: 1.33rem
+    }
+
+    /* FAQS PAGE */
+
+    .faqs-grid {
+        grid-template-rows: 100vh 138vh 70vh;
+    }
+    .faqs-page .header-titles {
+        font-size: 2rem;
+    }
+
+    .faqs p {
+        font-size: 1.3rem;
+    }
+
+    .faqs h2 {
+        font-size: 1.3rem;
+    }
+
+    .fa-ul {
+        gap: 1.5em;
+    }
+
+    .guarantee-card p {
+        font-size: 1.25rem;
+    }
+
+    /* TESTIMONIALS PAGE */
+
+    .testimonials-page .header-titles {
+        font-size: 2.5rem;
+    }
+
+    .quote {
+        gap: 1.3em;
+    }
+
+    .quote h3 {
+        font-size: 1.1rem;
+    }
+
+    .quote h1 {
+        font-size: 1.7rem;
+        transform: translate(-2px, 0px);
+    }
+
+    .testimonials-bg {
+        background-position-y: 95%;
+    }
+
+    .reviews h1 {
+        font-size: 1.8rem;
+    }
+
+    /* BUY PAGE */
+
+    .summary-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .summary-text p {
+        font-size: 1.4rem;
+    }
+
+    .buy-forms-section h2 {
+        font-size: 1.4rem;
+    }
+
+    legend h4 {
+        font-size: 1.1rem;
+    }
+
+    fieldset label {
+        font-size: 1.2rem;
+    }
+
+    .buy-forms-section input {
+        font-size: 1.2rem;
+    }
+  
+}
+
+    /* (referencia iPhone 12 Pro) */
+@media screen and (min-width:390px) {
+
+    .flex-section {
+        row-gap: 2em;
+    }
+
+    nav ul, .nav-toggle-label, .text, .sp-card-body, .sp-card-body p{
+        font-size: 120%;
+    }
+
+    section h1 {
+        font-size: 1.93rem;
+    }
+
+    nav button {
+        font-size: 1rem;
+    }
+
+    .amaze-title {
+        font-size: 3.5rem;
+        top: 18vh;
+        line-height: 5.5rem;
+    }
+
+    /* welcome section */
+    .welcome-section h1 {
+        font-size: 2.4rem;
+    }
+
+    .divider_1 {
+        margin-top: -1.4em;
+    }
+
+    .welcome-section p {
+        font-size: 1.4em;
+        line-height: 1.8em;
+    }
+
+    /* ABOUT PAGE  */
+    .about-grid {
+        grid-template-rows: repeat(2, 100vh) 55vh 112vh;
+    }
+
+    .header-titles {
+        font-size: 2.3rem;
+    }
+
+    .start-btn {
+        font-size: 1.4em;
+    }
+
+    /* quick info section */
+    .info-card h3 {
+        padding: 0 0.2rem;
+    }
+
+    .info-card p {
+        padding: 0 0.2rem;
+    }
+
+    /* about video section */
+    .about-video h1 {
+        font-size: 2rem;
+    }
+
+    /* goals section */
+    .goals-card {
+        height: 34.5vh;
+    }
+    .course-goals h1 {
+        font-size: 2rem;
+    }
+
+    /* FAQS PAGE */
+    .faqs-grid {
+        grid-template-rows: 100vh auto auto;
+    }
+
+    .faqs {
+        padding: 1em 0 2em;
+    }
+
+    .guarantee-card {
+        padding: 3em 2em;
+    }
+
+    .faqs h2 {
+        font-size: 1.3rem;
+    }
+
+    /* TESTIMONIALS PAGE */
+
+    .testimonials-page .header-titles {
+        font-size: 2.8rem;
+    }
+    .quote h3 {
+        font-size: 1.3rem;
+    }
+
+    .quote h1 {
+        font-size: 1.9rem;
+        transform: translate(-2px, 0px);
+    }
+
+    /* BUY PAGE */
+
+    .buy-forms-section fieldset {
+        gap: 0.8em;
+        padding: 1.2em;
+    }
+
+
+    
+
+
+
+}
+
+@media screen and (min-width:414px) {
+    .faqs h2 {
+        width: 92%;
+        font-size: 1.4rem;
+    }
+}
+
+/* referencia iPad mini (reducido para ajustars|alaxy tab s4) */
+@media screen and (min-width:712px) {
+
+    /* grid */
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(30, 10vh);
+    }
+
+    .hero-background {
+        grid-row: 1/11;
+    }
+
+    .hero-background .hero-banner {
+        padding-top: 2em;
+    }
+
+    .welcome-section {
+        grid-row: 11/21;
+    }
+
+    .best-routines-section {
+        grid-row: 21/27
+    }
+
+    .single-payment-section {
+        grid-row: 27/31;
+    } 
+    /* ends grid */
+
+    header a {
+        font-size: 1.2rem;
+    }
+
+    nav ul, .nav-toggle-label, .text, .sp-card-body, .sp-card-body p {
+        font-size: 150%;
+    }
+
+    nav li a {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+
+    nav button {
+        font-size: 1.4rem;
+    }
+
+    .hero-background {
+        background-position: -74vw 0vh;
+    }
+
+    .amaze-title {
+        font-size: 6.5rem;
+        top: 19vh;
+        line-height: 9.5rem;
+    }
+
+    #start-link .fa-angle-down, #start-link .start-btn {
+        transform: scale(1.1);
+    }
+
+    section h1 {
+        font-size: 2.93rem;
+    }
+
+    .divider_1 {
+        border-bottom: 3px solid var(--primary);
+        width: 7rem;
+    }
+
+    /* footer */
+    footer { 
+        font-size: 1.5em;
+    }
+
+    /* welcome section */
+       .welcome-section h1 {
+        font-size: 3.4rem;
+    }
+
+    .next {
+        transform: translate(-4em, 0.2em) scale(1.3);
+    }
+
+    /* best routines section */
+    .best-routines-section img {
+        width: 85%;
+    }
+
+    /* single payment section */
+    .offer-band-box {
+        height: 10em;
+        width: 10rem;
+    }
+
+    .offer-band {
+        transform: rotate(45deg) translate(41%, 20%) scale(1.5);
+    }
+
+    .price {
+        font-size: 3.3rem;
+    }
+
+    .price small {
+        font-size: 2rem;
+    }
+
+    .fa-check-circle {
+        font-size: 1.5rem;
+    }
+
+    .sp-card-body p {
+        font-size: 2.1rem;
+    }
+
+    .sp-card-body button {
+        font-size: 1.5rem;
+        min-width: 4.9rem;
+        padding: 2px 0px;
+    }
+
+    /* ABOUT PAGE */
+
+    .about-grid {
+        grid-template-rows: repeat(2, 100vh) 70vh 170vh;
+    }
+
+    .pages-background {
+        background-size: 636%;
+        background-position: 79% 100%;
+    }
+
+    .header-titles {
+        font-size: 4.3rem;
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+
+    .about-start-btn {
+        font-size: 1.4rem;
+    }
+
+    /* quick info section */
+    .info-card {
+        width: 56%;
+    }
+
+    .info-card h3 {
+        font-size: 2.15rem;
+    }
+
+    .info-card p {
+        font-size: 1.8rem;
+    }
+
+    /* about video section */
+    .about-video {
+        padding: 3em 0;
+    }
+
+    .about-video h1 {
+        font-size: 3.3rem;
+    }
+
+    /* course goals section */
+    .course-goals {
+        gap: 2em;
+    }
+
+    .course-goals h1 {
+        font-size: 3.2rem;
+    }
+
+    .goals-card {
+        height: 51.5vh;
+    }
+
+    .goals-text {
+        padding: 0.3em 2em;
+    }
+
+    .goals-text h3 {
+        font-size: 2.5rem;
+    }
+
+    .goals-text p {
+        font-size: 2rem;
+    }
+
+    /* FAQS PAGE */
+    .faqs-page .header-titles {
+        font-size: 4rem;
+    }
+
+    .faqs h2 {
+        font-size: 1.9rem;
+        margin-left: 0.5em;
+    }
+    
+    .faqs p {
+        font-size: 1.8rem;
+    }
+
+    .faqs .fa-chevron-up {
+        font-size: 1.4rem;
+        margin-bottom: -9px;
+    }
+    .fa-ul {
+        margin-left: 3rem;
+    }
+    .faqs .fa-question-circle {
+        font-size: 2rem;
+    }
+    .guarantee-card {
+        gap: 2em;
+        padding: 5em 2em;
+    }
+
+    .guarantee-card h2 {
+        font-size: 3rem;
+
+    }
+    .guarantee-card p {
+        font-size: 2rem;
+    }
+
+    .guarantee-card img {
+        width: 60%;
+    }
+
+    /* TESTIMONIALS PAGE */
+
+    .testimonials-page .header-titles {
+        font-size: 4.5rem;
+    }
+
+    .quote {
+        padding: 4em 2.5em;
+        gap: 2em;
+    }
+
+    .quote h3 {
+        font-size: 1.8rem;
+    }
+
+    .quote h1 {
+        font-size: 2.8rem;
+    }
+
+    .fa-quote-left {
+        font-size: 2rem;
+    }
+    .quotedivider {
+        gap: 2em;
+    }
+
+    .divider_3 {
+        border-bottom: 3px solid rgb(62 113 134);
+    }
+
+    .quotedivider .rule {
+        border-bottom: 3px solid var(--primary);
+    }
+
+    /* reviews section */
+
+    .testimonials-bg {
+        background-size: 185%;
+        background-position-y: 107%;
+        background-position-x: 62%;
+    }
+
+    .reviws {
+        padding: 3em 0;
+    }
+
+    .facebook-reviews-img-mobile {
+        width: 75%;
+    }
+
+    .reviews h1 {
+        font-size: 4.5rem;
+    }
+
+    /* BUY PAGE */
+
+    .summary-card-section {
+        padding: 4em 0 2em;
+    }
+
+    .summary-card {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .summary-card img {
+        width: 40%;
+    }
+
+    .summary-text  h3 {
+        font-size: 1.8rem;
+    }
+
+    .summary-text p {
+        font-size: 1.9rem;
+    }
+
+    .buy-forms-section {
+        padding: 3em 2.4em;
+    }
+
+    .buy-forms-section h2 {
+        font-size: 1.9rem;
+        margin-bottom: 0.5em;
+    }
+
+    .buy-forms-section h2:nth-child(3) {
+        margin-bottom: 1em;
+    }
+
+    legend h4 {
+        font-size: 1.4rem;
+    }
+    .account-form legend {
+        top: -2em;
+    }
+    .buy-forms-section input {
+        width: 45%;
+        font-size: 1.4rem;
+    }
+
+    .buy-forms-section input[type="checkbox"] {
+        width: unset;
+    }
+
+    fieldset label {
+        font-size: 1.3rem;
+    }
+
+    .buy-forms-section button {
+        font-size: 1rem;
+    }
+
+}
+
+/* referencia iPad air */
+@media screen and (min-width:820px) {
+
+    nav ul {
+        gap: 0.9em;
+    }
+
+    nav li a {
+        font-size: 1.8rem;
+    }
+
+    .amaze-title {
+        font-size: 7rem;
+    }
+
+    .hero-background .hero-banner {
+        padding-top: 4em;
+    }
+
+    #start-link {
+        gap: 1.4em;
+    }
+
+    #start-link .fa-angle-down, #start-link .start-btn {
+        transform: scale(1.2);
+    }
+
+    .flex-section {
+        row-gap: 2.5em;
+    }
+
+    /* wlcome section */
+    .welcome-section h1 {
+        font-size: 3.8rem;
+    }
+
+    .welcome-section p {
+        font-size: 1.5em;
+        line-height: 1.9em;
+    }
+
+    .next {
+        transform: translate(-5em, 0.2em) scale(1.5);
+    }
+
+    /* single payment section */
+    .offer-band-box {
+        height: 40%;
+        width: 24%;
+    }
+
+    .offer-band {
+        transform: rotate(45deg) translate(60%, 0%) scale(1.9);
+    }
+
+    .sp-card-body button {
+        font-size: 1.7rem;
+        min-width: 5.5rem;
+    }
+
+    /* ABOUT PAGE */
+
+    .header-titles {
+        font-size: 4.6rem;
+    }
+
+    .about-start-btn {
+        font-size: 1.5rem;
+    }
+
+    /* quick info section */
+    .quick-info {
+        gap: 3.6em
+    }
+
+    .info-card h3 {
+        font-size: 2.3rem;
+    }
+
+    .info-card p {
+        font-size: 2rem;
+    }
+
+    /* about video section */
+    .about-video {
+        padding: 4.1em 0;
+    }
+
+    .about-video h1 {
+        font-size: 3.5rem;
+    }
+
+    /* course goals section */
+    .course-goals {
+        gap: 2.4em;
+    }
+
+    .course-goals h1 {
+        font-size: 3.5rem;
+    }
+
+    /* FAQS PAGE */
+
+    .faqs {
+        padding: 2.5em 0 3em;
+    }
+
+    .faqs-page .header-titles {
+        font-size: 4.4rem;
+    }
+
+    .faqs h2 {
+        font-size: 2.3rem;
+    }
+
+    .faqs p {
+        font-size: 2rem;
+    }
+
+    .guarantee-card {
+        padding: 5em 2em;
+    }
+
+    .guarantee-card h2 {
+        font-size: 3.3rem;
+    }
+
+    .guarantee-card p {
+        font-size: 2.1rem;
+    }
+
+    /* TESTIMONIALS PAGE */
+
+    .quote {
+        gap: 2.5em;
+    }
+    
+    .quote h3 {
+        font-size: 1.9rem;
+    }
+
+    .quote h1 {
+        font-size: 3.4rem;
+    }
+
+    /* reviews section */
+
+    .reviews {
+        padding: 3em 0;
+    }
+
+    .reviews h1 {
+        font-size: 4.8rem;
+    }
+
+    
+}
+
+/* iPad mini horizontal */
+@media screen and (min-width:1024px) {
+
+    /* Navbar */
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+
+    header  a {
+        display: flex;
+        align-items: center;
+    }
+
+    nav {
+        all: unset;
+        display: flex;
+        align-items: center;
+        width: 60%;
+    }
+
+    nav a {
+        font-size: 16px;
+        opacity: 1;
+        transition: all 0.3s ease 0s;    
+    }
+
+    nav a:hover {
+        color: var(--lighterPrimary);
+    }
+
+    nav .enroll-btn:hover {
+        color:unset;
+    }
+
+    nav ul {
+        all: unset;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    nav li {
+        list-style: none;
+    }
+
+    nav li a {
+        font-size: 1.2rem;
+    }
+
+    nav button {
+        all: unset; 
+        min-width: fit-cntent;
+        flex-wrap: nowrap;
+    }
+
+    nav li .enroll-btn {
+        margin: unset;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: small;
+        border-radius: 50px;
+        padding: 7px 20px;
+        border: 2px solid var(--lighterPrimary);
+        transition: background-color 0.5s, color 0.5s;
+        white-space: nowrap;
+    }
+
+    nav li .enroll-btn:hover {
+        background-color: var(--lighterPrimary);
+        color: #0c0c0c;
+        font-weight: 700;
+    }
+    /* ends navbar */
+
+     /* main grid */
+     .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(42, 10vh);
+    }
+
+    .hero-background {
+        grid-row: 1/11;
+    }
+
+    .hero-background .hero-banner {
+        padding-top: 2em;
+    }
+
+    .welcome-section {
+        grid-row: 11/26;
+    }
+
+    .best-routines-section {
+        grid-row: 26/36
+    }
+
+    .single-payment-section {
+        grid-row: 36/43;
+    }
+    /* grid */
+
+
+    /* general */
+    .flex-section {
+        row-gap: 2em;
+    }
+
+    section h1 {
+        font-size: 3.4rem;
+    }
+
+    /* HERO BANNER */
+    .hero-background {
+        background-position: -104vw 8vh;
+    }
+    .hero-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+    .amaze-title {
+        position: unset;
+        font-size: 7rem;
+        width: min-content;   
+    }
+
+    #start-link {
+        position: unset;
+        width: min-content;
+    }
+
+
+    /* single payment section */
+    .offer-band-box {
+        height: 40%;
+        width: 22%;
+    }
+
+    .offer-band {
+        width: 6.1em;
+        transform: rotate(45deg) translate(75%, 0) scale(2.1);
+    }
+
+    /* ABOUT PAGE */
+
+    .about-grid {
+        grid-template-rows: 100vh 60vh 100vh 100vh;
+    }
+
+
+    .pages-background {
+        background-size: 351%;
+        background-position: 74% 78%;
+    }
+
+    .header-titles {
+        padding: 1em 2em;
+        line-height: 1.2;
+    }
+
+    /* quick info section */
+    .quick-info {
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: unset;
+    }
+
+    .info-card {
+        width: 35%;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .info-card h3 {
+        font-size: 1.95rem;
+    }
+
+    .info-card p {
+        font-size: 1.7rem;
+        line-height: 1.3;
+    }
+
+    .info-card-img {
+        display: flex;
+        height: 50%;
+    }
+
+    .info-card-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3em;
+        height: 33%;
+    }
+
+    .about-video {
+        padding: 3em 0;
+        gap: 2.1em;
+    }
+
+    /* course goals section */
+    .goals-cards-container {
+        flex-direction: row;
+    }
+
+    .goals-card {
+        height: 79vh;
+    }
+
+    .goals-img {
+        background-position: center;
+    }
+
+    .goals-text {
+        height: 64%;
+    }
+
+    .goals-text h3 {
+        font-size: 1.75rem;
+    }
+
+    .goals-text p {
+        font-size: 1.6rem;
+    }
+
+    /* FAQS PAGE */
+
+    .guarantee-card {
+        padding: 5em 4em;
+    }
+
+    .guarantee-card img {
+
+        width: 45%;
+    }
+
+    /* TESTIMONIALS PAGE */
+    .quote {
+        padding: 5em 3.5em;
+        gap: 2.5em;
+    }
+
+    .quote h3 {
+        font-size: 1.5rem;
+    }
+
+    .quote h1 {
+        font-size: 2.4rem;
+    }
+
+    /* reviews section */
+    .reviews {
+        padding: 3em 0;
+    }
+
+    .reviews h1 {
+        font-size: 3rem;
+    }
+
+    .facebook-reviews-img {
+        display: unset;
+        width: 85%;
+    }
+    .facebook-reviews-img-mobile {
+        display: none;
+    }
+
+    .testimonials-bg {
+        background-size: 100%;
+        background-position-y: 82%;
+    }
+
+    /* BUY PAGE */
+
+    .summary-card {
+        padding: 2em;
+    }
+
+    .summary-card img {
+        width: 26%;
+    }
+
+    .summary-text {
+        gap: 1.5em;
+        align-items: center;
+        padding: 0.5em 0;
+    }
+
+    .summary-text h3 {
+        font-size: 1.6rem;
+    }
+
+    .buy-forms-section fieldset {
+        gap: 0.9em;
+        padding: 2em;
+    }
+
+}
+
+/* pantallas */
+@media screen and (min-width:1200px) {
+
+    /* grid */
+    .grid {
+        grid-template-rows: repeat(51, 10vh);
+    }
+    .welcome-section {
+        grid-row: 11/28;
+    }
+    .best-routines-section {
+        grid-row: 28/42
+    }
+    .single-payment-section {
+        grid-row: 42/52;
+    }
+    /* ends grid */
+    
+    header {
+        padding: 0 3rem 0 2rem;
+    }
+
+    header a {
+        font-size: 1rem;
+    }
+
+    nav {
+        width: 47%;
+    }
+
+    nav li a {
+        font-size: 1.1rem;
+    }
+
+    .hero-background {
+        background-position: right center;
+        background-size: unset;
+    }
+
+    .hero-banner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 8rem;
+    }
+
+    .hero-background .hero-banner {
+        padding-top: 0em;
+    }
+
+    #start-link {
+        font-size: 80%;
+    }
+
+    #start-link .start-btn {
+        transform: initial;
+    }
+
+    /* general */
+    nav ul, .nav-toggle-label, .text, .sp-card-body {
+        font-size: unset;
+    }
+
+    .flex-section {
+        justify-content: center;
+        row-gap: 2.2em;
+    }
+
+    #start-link {
+        display: none;
+    }
+
+    #start-link-to-video {
+        display: flex;
+        width: min-content;
+        justify-content: center;
+        gap: 1em;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transform: translate(0px, 4em);
+    }
+    
+    footer p {
+        font-size: 1rem;
+    }
+
+    /* welcome section */
+    .welcome-section h1 {
+        font-size: 3.2rem;
+    }
+
+    .divider_1 {
+        width: 5rem;
+    }
+
+    .video {
+        /* width: 77%;
+        padding-top: 43.5%; */
+        width: 93%;
+        padding-top: 51.5%;
+        /* margin-top: -3px; */
+    }
+
+    .welcome-section .text {
+        row-gap: 3.5em
+    }
+
+    .text p {
+        font-size: 1.7em;
+        line-height: 1.8em;
+        width: 86%;
+    }
+
+    .eye-divider {
+        display: flex;
+        gap: 2em;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+
+    .rule {
+        border-bottom: 2px solid var(--primary);
+        width: 41%;
+    }
+
+    .next {
+        display: none;
+    }
+
+    /* best routines section */
+    .best-routines-section img {
+        margin-top: 0.5em;
+        box-shadow: 1px 1px 11px 0px black;
+        width: 82%;
+    }
+
+    .best-routines-section h1 {
+        font-size: 3.2rem;
+        line-height: 1.3;
+        width: 65%;
+    }
+
+    /* single payment section */
+    .offer-band-box {
+        height: 40%;
+        width: 20%;
+    }
+
+    .offer-band {
+        width: 6.25em;
+        transform: rotate(45deg) translate(86%, 0%) scale(2.5);
+    }
+
+    .sp-card {
+        width: 88%;
+    }
+
+    .price {
+        font-size: 5rem;
+    }
+
+    .price small {
+        font-size: 3rem;
+    }
+
+    /* ABOUT PAGE */
+
+    .about-grid {
+        grid-template-rows: 55vh 45vh 130vh 88vh;
+
+    }
+
+    .about-grid .hero-banner {
+        padding-left: 0;
+    }
+
+    .about-start-btn {
+        display: none;
+    }  
+    .header-titles {
+        place-self: center;
+        padding: unset;
+        font-size: 2.7rem;
+    } 
+
+    .pages-background {
+        background-image: url(../img/fondo-prueba1.png);
+        background-size: cover;
+        background-position: right top;
+        filter: drop-shadow(1px 3px 1px black);
+    }
+
+    .pages-background .hero-banner {
+        height: 55vh;
+    }
+
+    /* quick info section */
+
+    .quick-info {
+        border-top: 2em solid #2a023447;
+    }
+
+    .info-card {
+        flex-direction: row;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .info-card-img {
+        height: 55%;
+    }
+    
+    .info-card-text {
+        height: 55%;
+        width: 43%;
+        gap: 0.5rem;
+    }
+
+    .info-card h3 {
+        font-size: 1.2rem;
+    }
+
+    
+    .info-card p {
+        
+        font-size: 1.2rem;
+    }
+
+    /* about video section */
+    .about-video h1 {
+        font-size: 2.4rem;
+    }
+
+    .about-video .video {
+        width: 85%;
+        padding-top: 48.5%;
+    }
+    /* course goals section */
+
+    .course-goals {
+        justify-content: flex-start;
+        padding-top: 2em;
+    }
+
+    .course-goals h1 {
+        font-size: 2.4rem;
+        align-self: flex-start;
+        margin-left: 3rem;
+    }
+
+    .course-goals .divider_1 {
+        align-self: flex-start;
+        margin-left: 4rem;
+    }
+
+    .goals-cards-container {
+        width: 93%;
+    }
+    .goals-card {
+        height: 60vh;
+        width: 33%;
+    }
+
+    .goals-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .goals-text p {
+        font-size: 1.2rem;
+    }
+
+    /* FAQS PAGE */
+    .faqs-grid {
+        grid-template-rows: 55vh auto auto;
+    }
+
+    .faqs-page .header-titles {
+        font-size: 2.4rem;
+        padding-bottom: 0;
+    }
+
+    .faqs-page .hero-banner {
+        padding-left: 0;
+    }
+
+    .faqs {
+        padding: 2.5em 5em 3em;
+    }
+
+    .faqs h2 {
+        font-size: 1.5rem;
+    }
+
+    .faqs p {
+        font-size: 1.3rem;
+    }
+
+    .faqs-divider {
+        width: 88%;
+        margin-left: 2em;
+    }
+
+    .guarantee-card {
+        padding: 4em 2em;
+    }
+
+
+    .guarantee-card h2 {
+        font-size: 2.3rem;
+    }
+
+    .guarantee-card p {
+        font-size: 1.5rem;
+    }
+
+    .guarantee-card img {
+        width: 30%;
+    }
+
+    /* TESTIMONIALS PAGE */
+    .testimonials-page .hero-banner {
+        padding-left: 0;
+    }
+
+    .testimonials-grid {
+        grid-template-rows: 55vh auto auto;
+    }
+
+    .quote {
+        padding: 5em 11.5em;
+    }
+
+    .quote h3 {
+        font-size: 1.25rem;
+    }
+
+    /* BUY PAGE */
+
+    .buy-grid {
+        grid-template-rows: 55vh auto auto;
+    }
+    .summary-card {
+        gap: 3em;
+        width: 70%;
+    }
+    .sumary-card img {
+        width: 23%;
+    }
+
+    .summary-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .buy-forms-section input {
+        width: 30%;
+        font-size: 1.2rem;
+    }
+
+    .buy-forms-section fieldset {
+        gap: 1.1em;
+    }
+
+    .buy-forms-section {
+        padding: 3em 8em;
+        gap: 4em;
+    }
+
+    
+}
+    
+    
+

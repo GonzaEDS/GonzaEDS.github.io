@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaze Anywhere - Fascinating Card Magic</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script data-search-pseudo-elements defer src="https://pro.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="img/logo.png" alt="Amaze Anywhere logo" class="logo"></a> 
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul class="nav__links">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About the course</a>
+                </li>
+                <li>
+                    <a href="faqs.html">FAQs</a>
+                </li>
+                <li>
+                    <a href="testimonials.html">Testimonials</a>
+                </li>
+                <li><button><a href="buy.html" class="enroll-btn">Enroll today</a></button></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    </header>
+    <main class="grid">
+        <div class="hero-background">
+            <div class="hero-banner">
+                <h1 class="amaze-title">Amaze anywhere.</h1> 
+                <button id="start-link"><i aria-hidden="true" class="fas fa-angle-down" style="color:white"></i><div class="start-btn">Start</div></button>  
+                <button id="start-link-to-video"><i aria-hidden="true" class="fas fa-angle-down" style="color:white"></i><div class="start-btn">Start</div></button>  
+            </div>
+        </div>
+        <!-- Welcome -->
+        <section class="welcome-section flex-section" id="start">
+
+            <h1>Welcome</h1>
+            <div class="divider_1"></div>
+            <div class="video" id="video">
+                <iframe class="iframe" allowfullscreen="" title="Reproductor de vídeo vimeo" src="https://player.vimeo.com/video/598020474?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=0&amp;portrait=0&amp;byline=0#t="></iframe>     
+            </div>
+            <div class="text flex-section">
+                <p>With more than 15 years of career, thanks to magic we have traveled the world, performed in TV shows and won multiple international awards.</p>
+                <div class="eye-divider">
+                    <div class="rule"></div><i aria-hidden="true" class="far fa-eye" id="eye-icon"></i><div class="rule"></div>              
+                </div>
+            </div>
+            <button class="next"><i aria-hidden="true" class="fas fa-angle-down"></i><a href="#best-routines">Next</a></button>
+
+        </section>
+        <!-- Best routines and single payment card -->
+        <section class="best-routines-section flex-section" id="best-routines">
+            <h1>You will learn our best routines</h1>
+            <div class="divider_1"></div>
+            <img class="img-shadow-fx" src="img/best-routines.jpg" alt="amazed people">
+        </section>
+        
+        <section class="single-payment-section flex-section">   
+            <div class="sp-card-bg flex-item-c">
+                <div class="offer-band-box"><div class="offer-band">Offer</div></div>
+                <div class="sp-card flex-item-c">
+                    <div class="sp-card-head flex-item-c">
+                        <h1>Single payment</h1>
+                    </div>
+                    <div class="sp-card-body flex-item-c">
+                        <div class="price flex-item-r"><strike class="flex-item-r"><small>$58</small></strike> $29<small>USD</small></div> 
+                        <p><i aria-hidden="true" class="far fa-check-circle"></i> <small>Lifetime Access</small></p>
+                        <button><a href="buy.html">Buy</a></button>
+                        <p><small>Limited time offer</small></p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+    </main>
+        <!-- Footer -->
+    <footer class="flex-item-r">
+        <p>Copyright © 2022 Amaze Anywhere</p>
+    </footer>
+</body>
+<script>
+    /* shrinking navbar when scrolling */
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector('header').style.top = "0";
+        } else {
+            document.querySelector('header').style.top = "calc(0em - var(--navHeight))";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
+    /*Start anchor link smooth scroll*/
+    const startLink = document.querySelector('#start-link')
+    startLink.addEventListener("click", scrollToStart);
+    function scrollToStart() {
+      const start = document.getElementById("start");
+      start.scrollIntoView({behavior: "smooth", inline: "nearest"});
+    }
+
+    const startLinkToVideo = document.querySelector('#start-link-to-video')
+    startLinkToVideo.addEventListener("click", scrollToVideo);
+    function scrollToVideo() {
+      const video = document.getElementById("video");
+      video.scrollIntoView({behavior: "smooth", inline: "nearest"});
+    } 
+</script>
+</html>

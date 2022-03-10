@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaze Anywhere - Fascinating Card Magic</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script data-search-pseudo-elements defer src="https://pro.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="img/logo.png" alt="Amaze Anywhere logo" class="logo"></a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul class="nav__links">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About the course</a>
+                </li>
+                <li>
+                    <a href="faqs.html">FAQs</a>
+                </li>
+                <li>
+                    <a href="testimonials.html">Testimonials</a>
+                </li>
+                <li><button><a href="buy.html" class="enroll-btn">Enroll today</a></button></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    </header>
+    <main class="about-grid about-bg-img">
+        <div class="pages-background">
+            <div class="hero-banner about-banner ">
+                <h1 class="header-titles">Fascinating Card Magic</h1>  
+                <button id="about-start"><a href="#quick-info"><div class="about-start-btn"> Kwow the course <i aria-hidden="true" class="fas fa-angle-down"></i></div></a></button>
+            </div>
+        </div>
+        
+        <section class="quick-info" id="quick-info">
+            <!-- <div class="info-background"> -->
+                <div class="info-card">
+                    <div class="info-card-img">
+                        <img src="img/pc-man.webp"  alt="man on pc">
+                    </div>
+                    <div class="info-card-text">
+                        <h3>Course Modality</h3>
+                        <p>Online. You can see it whenever you want and from wherever you are</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-img">
+                        <img src="img/Baraja.webp"  alt="man on pc">
+                    </div>
+                    <div class="info-card-text">
+                        <h3>Requisites</h3>
+                        <p>You only would need a deck of cards and desire to learn!</p>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </section>
+            <!-- Welcome -->
+        <section class="about-video">
+
+                <h1>What is the course about</h1>
+                <div class="divider_1"></div>
+
+                <div id="start" class="video" >
+                    <!-- <iframe src="https://player.vimeo.com/video/598020474?h=6b0ccb0366&title=0&byline=0&portrait=0" width="1135" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>             -->         
+                    <iframe class="iframe" allowfullscreen="" title="Reproductor de vídeo vimeo" src="https://player.vimeo.com/video/597820867?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=0&amp;portrait=0&amp;byline=0#t="></iframe>     
+                </div>
+            </section>
+            <section class="course-goals">
+                <h1>Course goals</h1>
+                <div class="divider_1"></div>
+                <div class="goals-cards-container">
+                    <div class="goals-card">
+                        <div class="goals-img-container">
+                            <div class="goals-img goals-img-1"></div>
+                            <div class="goals-img-fx"></div>
+                        </div>
+                        <div class="goals-text">
+                            <h3>Amaze</h3>
+                            <p>You will learn high-impact routines that work in any situation and with any public</p>
+                        </div>
+                        <div class="goals-card-fx"></div>
+                    </div>
+                    <div class="goals-card">
+                        <div class="goals-img-container">
+                            <div class="goals-img goals-img-2"></div>
+                            <div class="goals-img-fx"></div>
+                        </div>
+                        <div class="goals-text">
+                            <h3>Experiences</h3>
+                            <p>You will be able to connect with people on another level and create moments that will be remembered for life</p>
+                        </div>
+                        <div class="goals-card-fx"></div>
+                    </div>
+                    <div class="goals-card">
+                        <div class="goals-img-container img3-adjust">
+                            <div class="goals-img goals-img-3"></div>
+                            <div class="goals-img-fx"></div>
+                        </div>
+                        <div class="goals-text">
+                            <h3>Tools</h3>
+                            <p>You will develop new ways of thinking, different types of skills, and master card illusionism.</p>
+                        </div>
+                        <div class="goals-card-fx"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="flex-item-r">
+        <p>Copyright © 2022 Amaze Anywhere</p>
+    </footer>
+</body>
+<script>
+    /* shrinking navbar when scrolling */
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector('header').style.top = "0";
+        } else {
+            document.querySelector('header').style.top = "calc(0em - var(--navHeight))";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
+
+
+    
+</script>
+</html>

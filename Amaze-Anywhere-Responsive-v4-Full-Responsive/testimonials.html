@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaze Anywhere - Fascinating Card Magic</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script data-search-pseudo-elements defer src="https://pro.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+</head>
+<body class="testimonials-page faqs-page">
+    <header>
+        <a href="index.html"><img src="img/logo.png" alt="Amaze Anywhere logo" class="logo"></a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul class="nav__links">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About the course</a>
+                </li>
+                <li>
+                    <a href="faqs.html">FAQs</a>
+                </li>
+                <li>
+                    <a href="testimonials.html">Testimonials</a>
+                </li>
+                <li><button><a href="buy.html" class="enroll-btn">Enroll today</a></button></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    </header>
+    <main class="testimonials-grid testimonials-bg">
+        <div class="pages-background">
+            <div class="hero-banner about-banner ">
+                <h1 class="header-titles">Testimonials</h1> 
+            </div>
+        </div>
+        <section class="quote">
+            <h3>Mikelex, latin american card magic champion</h3>
+            <div class="divider_3"></div>
+            <h1>"The best course to learn in a clear and easy way to amaze people."</h1>
+            <div class="quotedivider">
+                <div class="rule"></div>
+                <i class="fas fa-quote-left"></i>
+                <div class="rule"></div>
+            </div>
+        </section>
+        <section class="reviews">
+            <h1>facebook reviews</h1>
+            <img class="facebook-reviews-img" src="./img/facebook-reviews.png" alt="facebook reviews">
+            <img class="facebook-reviews-img-mobile" src="./img/reviews-celular.png" alt="facebook reviews">
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="flex-item-r">
+        <p>Copyright © 2022 Amaze Anywhere</p>
+    </footer>
+</body>
+<script>
+    /* shrinking navbar when scrolling */
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector('header').style.top = "0";
+        } else {
+            document.querySelector('header').style.top = "calc(0em - var(--navHeight))";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
+    /*arrow anchor link smooth scroll*/
+    const startLink = document.querySelector('#start-link')
+    startLink.addEventListener("click", myFunction);
+    function myFunction() {
+      const start = document.getElementById("start");
+      start.scrollIntoView({behavior: "smooth", inline: "nearest"});
+    }   
+</script>
+</html>

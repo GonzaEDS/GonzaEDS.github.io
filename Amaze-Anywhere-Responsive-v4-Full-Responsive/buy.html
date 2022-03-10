@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaze Anywhere - Fascinating Card Magic</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script data-search-pseudo-elements defer src="https://pro.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+</head>
+<body class="testimonials-page faqs-page">
+    <header>
+        <a href="index.html"><img src="img/logo.png" alt="Amaze Anywhere logo" class="logo"></a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul class="nav__links">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About the course</a>
+                </li>
+                <li>
+                    <a href="faqs.html">FAQs</a>
+                </li>
+                <li>
+                    <a href="testimonials.html">Testimonials</a>
+                </li>
+                <li><button><a href="buy.html" class="enroll-btn">Enroll today</a></button></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    </header>
+    <main class="buy buy-grid">
+        <div class="pages-background">
+            <div class="hero-banner about-banner ">
+                <h1 class="header-titles">Order summary</h1> 
+            </div>
+        </div>
+        <section class="summary-card-section">
+            <div class="summary-card">
+                <img src="img/fascinating-card-magic.webp" alt="man showing tricks with cards">
+                <div class="summary-text">
+                    <h3>Amaze Anywhere - Fascinating card magic</h3>
+                    <p><b>$29USD</b></p>
+                </div>
+            </div>
+        </section>
+        <section class="buy-forms-section">
+            <!-- Account form -->
+            <h2>Student login details</h2>
+            <form class="account-form" action="envio.php" method="post">
+                <fieldset>
+                    <legend><h4>Create an account to acces materials related to your purchase</h4></legend>
+                    <label for="email">*Email</label>
+                    <input type="email" name="email" id="email" placeholder="name@example.com" >
+                    <label for="name">*Name</label>
+                    <input type="text" name="name" id="name" placeholder="Jane Doe">
+                    <div class="checkbox">
+                        <input type="checkbox" name="promotions" id="promotions" checked>
+                        <label for="promotions">I agree to receive emails with instructions and promotions (optional).</label>
+                    </div>
+                </fieldset>
+            </form>
+            <!-- ends account form -->
+            <h2>Payment information</h2>
+            <!-- payment form -->
+            <form class="credit-card-form" action="envio.php" method="post">
+                <fieldset>
+                    <legend><h4>Credit card</h4></legend>
+                    <label for="name-on-card">*Name on card</label>
+                    <input type="text" name="name-on-card" id="name-on-card" placeholder="Irwin Jones">
+                    <label for="card-number">*Card number</label>
+                    <input type="number" name="card-number" id="card-number" placeholder="1234 1234 1234 1234">
+                    <label for="expiration-date">*Expiration date</label>
+                    <input type="date" name="expiration-date" id="expiration-date">
+                    <label for="cvv">*CVV/CVC</label>
+                    <input type="number" name="cvv" id="cvv" placeholder="CVC">
+                    <div class="checkbox">
+                        <input type="checkbox" name="future-purchases" id="future-porchases" checked>
+                        <label for="promotions">Save my billing information for future purchases</label>
+                    </div>
+                </fieldset>
+            </form>
+            <!-- ends payment form -->
+            <button><big>BUY</big></button>
+        </section>    
+    </main>
+    <!-- Footer -->
+    <footer class="flex-item-r">
+        <p>Copyright © 2022 Amaze Anywhere</p>
+    </footer>
+</body>
+<script>
+    /* shrinking navbar when scrolling */
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector('header').style.top = "0";
+        } else {
+            document.querySelector('header').style.top = "calc(0em - var(--navHeight))";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
+    /*arrow anchor link smooth scroll*/
+    const startLink = document.querySelector('#start-link')
+    startLink.addEventListener("click", myFunction);
+    function myFunction() {
+      const start = document.getElementById("start");
+      start.scrollIntoView({behavior: "smooth", inline: "nearest"});
+    }   
+</script>
+</html>
+
+

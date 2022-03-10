@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaze Anywhere - Fascinating Card Magic</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script data-search-pseudo-elements defer src="https://pro.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+</head>
+<body class="faqs-page">
+    <header>
+        <a href="index.html"><img src="img/logo.png" alt="Amaze Anywhere logo" class="logo"></a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul class="nav__links">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About the course</a>
+                </li>
+                <li>
+                    <a href="faqs.html">FAQs</a>
+                </li>
+                <li>
+                    <a href="testimonials.html">Testimonials</a>
+                </li>
+                <li><button><a href="buy.html" class="enroll-btn">Enroll today</a></button></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    </header>
+    <main class="faqs-grid">
+        <div class="pages-background">
+            <div class="hero-banner about-banner ">
+                <h1 class="header-titles">Frequently Asked Questions</h1> 
+            </div>
+        </div>
+        <section class="faqs">
+            <div class="question-divider">
+                    <div class="rule"></div>
+                    <i class="far fa-question-circle"></i><div class="rule"></div>
+            </div>
+            <ul class="fa-ul">
+                
+                <li><span class="fa-li"><i class="fas fa-chevron-up"></i></span> 
+                    <h2>Do i need to be skillfull</h2>
+                    <p>It does not matter if you do not consider yourself skilled as we will guide you step by step in a simple way. In addition, many of the routines do not require manual dexterity at all.</p>
+                </li>
+                <div class="faqs-divider"></div>
+                <li><span class="fa-li"><i class="fas fa-chevron-up"></i></span> 
+                    <h2>Is any prior knowledge required?</h2>
+                    <p>No. And in case you have already studied, it will also be very useful to you because we will share new approaches, our professional material and presentation details that wikk make your routines more impressive.</p>
+                </li>
+                <div class="faqs-divider"></div>
+                <li><span class="fa-li"><i class="fas fa-chevron-up"></i></span> 
+                    <h2>Is there an age limit?</h2>
+                    <p>There is practically no limit. If you are reading this then you have everything you need to learn.</p>
+                </li>
+                
+            </ul>
+            <div class="question-divider">
+                <div class="rule"></div>
+                <i class="far fa-question-circle"></i><div class="rule"></div>
+            </div>
+        </section>
+        <section class="guarantee ">
+            <div class="cardsbackground">
+                <div class="guarantee-card">
+                    <h2>Satisfaction guarantee</h2>
+                    <p>If you are not satisfied you will get a refund in the first month.</p> 
+                    <img src="./img/money-back-guarantee.png" alt="money back guarantee logo">
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="flex-item-r">
+        <p>Copyright © 2022 Amaze Anywhere</p>
+    </footer>
+</body>
+<script>
+    /* shrinking navbar when scrolling */
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector('header').style.top = "0";
+        } else {
+            document.querySelector('header').style.top = "calc(0em - var(--navHeight))";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
+    /*arrow anchor link smooth scroll*/
+    const startLink = document.querySelector('#start-link')
+    startLink.addEventListener("click", myFunction);
+    function myFunction() {
+      const start = document.getElementById("start");
+      start.scrollIntoView({behavior: "smooth", inline: "nearest"});
+    }  
+</script>
+</html>
